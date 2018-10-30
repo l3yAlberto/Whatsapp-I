@@ -68,7 +68,6 @@ public class WhatsappService{
 					for(int i3 = 0;i3<repUser.size();i3++) {
 						if(repUser.get(i3).getId().equals(repChat.get(i).inboxes.get(i1).user.getId())) {
 							repUser.get(i3).deliverZap(msg, idChat);
-							return;
 						}
 					}
 				}
@@ -107,7 +106,7 @@ public class WhatsappService{
 		String idC = "";
 		for(int i = 0;i<repUser.size();i++) {
 			if(repUser.get(i).getId().equals(idUser)) {
-				for(int i1 = 0;i1<repUser.get(i).chats.size();i++) {
+				for(int i1 = 0;i1<repUser.get(i).chats.size();i1++) {
 					if (repUser.get(i).chats.get(i1).getId().equals(idChat)) {
 						idC += repUser.get(i).chats.get(i1).getId();
 						repUser.get(i).chats.remove(i1);
@@ -119,7 +118,7 @@ public class WhatsappService{
 		}
 		for (int i = 0;i<repChat.size();i++) {
 			if (repChat.get(i).getId().equals(idC)) {
-				for(int i1 = 0;i1<repChat.get(i).inboxes.size();i++) {
+				for(int i1 = 0;i1<repChat.get(i).inboxes.size();i1++) {
 					if(repChat.get(i).inboxes.get(i1).user.getId().equals(idUser)) {
 						repChat.get(i).inboxes.remove(i1);
 						break;
